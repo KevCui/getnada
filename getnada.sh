@@ -103,7 +103,7 @@ jq_format() {
 
 fake_username () {
     # Create a fake user
-    echo "$($_FAKER -n firstName).$($_FAKER -n lastName)" | sed -E 's/"//g'
+    echo "$($_FAKER -n firstName).$($_FAKER -n lastName)" | sed -E 's/"//g' | tr '[:upper:]' '[:lower:]'
 }
 
 get_inbox() {

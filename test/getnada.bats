@@ -43,7 +43,7 @@ setup() {
 
 @test "CHECK: fake_username()" {
     contain_str() {
-        [[ $1 =~ ^[a-zA-Z]+\.[a-zA-Z]+$ ]] && echo "true" || echo "false"
+        [[ $1 =~ ^[a-z]+\.[a-z]+$ ]] && echo "true" || echo "false"
     }
     run fake_username
     [ "$status" -eq 0 ]
