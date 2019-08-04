@@ -47,8 +47,8 @@ set_var() {
 
 set_command() {
     # Declare commands
-    _CURL="$(command -v curl)" || command_not_found "curl"
-    _JQ="$(command -v jq)" || command_not_found "jq"
+    _CURL="$(command -v curl)" || command_not_found "curl" "https://curl.haxx.se/download.html"
+    _JQ="$(command -v jq)" || command_not_found "jq" "https://stedolan.github.io/jq/"
     _FAKER="$(command -v faker-cli)" || command_not_found "faker-cli" "https://github.com/lestoni/faker-cli"
 }
 
