@@ -63,7 +63,6 @@ setup() {
         echo "show inbox json"
     }
     run get_random_inbox
-    echo $output > log
     [ "$status" -eq 0 ]
     [ "${lines[0]}" = "show inbox json" ]
     [ "${lines[1]}" = "Inbox: JackMe@test.com" ]
