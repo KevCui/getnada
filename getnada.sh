@@ -141,7 +141,7 @@ get_random_inbox() {
     d=$(show_random_domain | tail -1)
 
     get_inbox "$u@$d"
-    echo "Inbox: $u@$d"
+    echo "$u@$d"
 }
 
 main() {
