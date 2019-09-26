@@ -65,5 +65,5 @@ setup() {
     run get_random_inbox
     [ "$status" -eq 0 ]
     [ "${lines[0]}" = "show inbox json" ]
-    [ "${lines[1]}" = "Inbox: JackMe@test.com" ]
+    [ "${lines[1]}" = "JackMe@test.com" ]
 }
