@@ -40,11 +40,15 @@ Examples:
     ~$ ./getnada -s
 ```
 
-### Run tests
+## Run tests
 
 ```
 ~$ bats test/getnada.bats
 ```
+
+## Similar project
+
+Want more more temp mail service? Check out [1secmail](https://github.com/KevCui/1secmail), you may like it!
 
 ---
 
