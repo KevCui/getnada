@@ -1,4 +1,4 @@
-# getnada
+# getnada ![CI](https://github.com/KevCui/getnada/workflows/CI/badge.svg)
 
 A script to use [getnada](https://getnada.com/) temp mail service from terminal.
 
