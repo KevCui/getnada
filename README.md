@@ -1,6 +1,6 @@
-# getnada-cli
+# getnada
 
-A script to use [getnada](https://getnada.com/) temp mail service in terminal.
+A script to use [getnada](https://getnada.com/) temp mail service from terminal.
 
 ### Dependency
 
@@ -13,7 +13,7 @@ A script to use [getnada](https://getnada.com/) temp mail service in terminal.
 
 ```
 Usage:
-  ./getnada.sh [-i <inbox>|-m <uid>|-d <uid>|-s]
+  ./getnada [-i <inbox>|-m <uid>|-d <uid>|-s]
 
 Options:
   no option        Optional, randamly get an inbox
@@ -25,19 +25,19 @@ Options:
 
 Examples:
   - Generate a random inbox:
-    ~$ ./getnada.sh
+    ~$ ./getnada
 
   - Get mails in test@getnada.com:
-    ~$ ./getnada.sh -i 'test@getnada.com'
+    ~$ ./getnada -i 'test@getnada.com'
 
   - Show mail uUa4V5Hjmkqf9O detail in w3m:
-    ~$ ./getnada.sh -m uUa4V5Hjmkqf9O
+    ~$ ./getnada -m uUa4V5Hjmkqf9O
 
   - Delete mail uUa4V5Hjmkqf9O:
-    ~$ ./getnada.sh -d uUa4V5Hjmkqf9O
+    ~$ ./getnada -d uUa4V5Hjmkqf9O
 
   - Show all available domains:
-    ~$ ./getnada.sh -s
+    ~$ ./getnada -s
 ```
 
 ### Run tests

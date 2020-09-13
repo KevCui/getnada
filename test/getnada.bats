@@ -6,7 +6,7 @@
 BATS_TEST_SKIPPED=
 
 setup() {
-    _SCRIPT="./getnada.sh"
+    _SCRIPT="./getnada"
     _JQ="$(command -v jq)"
     _FAKER="$(command -v faker-cli)"
 
