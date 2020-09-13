@@ -1,5 +1,4 @@
-getnada-cli
-===========
+# getnada-cli
 
 A script to use [getnada](https://getnada.com/) temp mail service in terminal.
 
@@ -7,6 +6,7 @@ A script to use [getnada](https://getnada.com/) temp mail service in terminal.
 
 - [cURL](https://curl.haxx.se/download.html)
 - [jq](https://stedolan.github.io/jq/)
+- [w3m](http://w3m.sourceforge.net/)
 - [faker-cli](https://github.com/lestoni/faker-cli)
 
 ### How to use
@@ -30,7 +30,7 @@ Examples:
   - Get mails in test@getnada.com:
     ~$ ./getnada.sh -i 'test@getnada.com'
 
-  - Show mail uUa4V5Hjmkqf9O detail:
+  - Show mail uUa4V5Hjmkqf9O detail in w3m:
     ~$ ./getnada.sh -m uUa4V5Hjmkqf9O
 
   - Delete mail uUa4V5Hjmkqf9O:
@@ -45,3 +45,7 @@ Examples:
 ```
 ~$ bats test/getnada.bats
 ```
+
+---
+
+<a href="https://www.buymeacoffee.com/kevcui" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="60px" width="217px"></a>

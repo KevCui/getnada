@@ -49,6 +49,7 @@ set_command() {
     # Declare commands
     _CURL="$(command -v curl)" || command_not_found "curl" "https://curl.haxx.se/download.html"
     _JQ="$(command -v jq)" || command_not_found "jq" "https://stedolan.github.io/jq/"
+    _W3M="$(command -v w3m)" || command_not_found "w3m" "http://w3m.sourceforge.net/"
     _FAKER="$(command -v faker-cli)" || command_not_found "faker-cli" "https://github.com/lestoni/faker-cli"
 }
 
@@ -115,7 +116,7 @@ get_inbox() {
 get_message() {
     # Get message by uid
     # $1: uid
-    jq_format "$($_CURL -sSX GET "$_MESSAGE_URL/$1")"
+    $_W3M -T "text/html" <<< "$($_CURL -sSX GET "$_MESSAGE_URL/$1" | $_JQ -r '.html')"
 }
 
 delete_message() {
