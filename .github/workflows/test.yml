@@ -24,7 +24,7 @@ jobs:
         run: npm install -g faker-cli
 
       - name: Install jq
-        run: npm install -g jq
+        run: sudo apt install jq
 
       - name: Run tests
         run: cd "$GITHUB_WORKSPACE" && bats test/getnada.bats
