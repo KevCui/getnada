@@ -48,7 +48,7 @@ Examples:
 
 ## Similar project
 
-Want more more temp mail service? Check out [1secmail](https://github.com/KevCui/1secmail), you may like it!
+Want more temp mail service? Check out [1secmail](https://github.com/KevCui/1secmail), you may like it!
 
 ---
 
