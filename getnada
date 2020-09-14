@@ -3,12 +3,12 @@
 # A script to use getnada temp mail service in terminal
 #
 #/ Usage:
-#/   ./getnada [-i <inbox>|-m <uid>|-d <uid>|-s]
+#/   ./getnada [-u <inbox>|-i <uid>|-d <uid>|-s]
 #/
 #/ Options:
 #/   no option        Optional, randamly get an inbox
-#/   -i <inbox>       Optional, get an inbox by its mail address
-#/   -m <uid>         Optional, show mail by its uid
+#/   -u <inbox>       Optional, get an inbox by its mail address
+#/   -i <uid>         Optional, show mail by its uid
 #/   -d <uid>         Optional, delete mail by its uid
 #/   -s               Optional, show available domains
 #/   -h | --help      Display this help message
@@ -18,10 +18,10 @@
 #/     ~$ ./getnada
 #/
 #/   \e[32m- Get mails in test@getnada.com:\e[0m
-#/     ~$ ./getnada \e[33m-i 'test@getnada.com'\e[0m
+#/     ~$ ./getnada \e[33m-u 'test@getnada.com'\e[0m
 #/
 #/   \e[32m- Show mail uUa4V5Hjmkqf9O detail: \e[0m
-#/     ~$ ./getnada \e[33m-m uUa4V5Hjmkqf9O\e[0m
+#/     ~$ ./getnada \e[33m-i uUa4V5Hjmkqf9O\e[0m
 #/
 #/   \e[32m- Delete mail uUa4V5Hjmkqf9O: \e[0m
 #/     ~$ ./getnada \e[33m-d uUa4V5Hjmkqf9O\e[0m
@@ -56,12 +56,12 @@ set_command() {
 set_args() {
     # Declare arguments
     expr "$*" : ".*--help" > /dev/null && usage
-    while getopts ":hsi:m:d:" opt; do
+    while getopts ":hsu:i:d:" opt; do
         case $opt in
-            i)
+            u)
                 _INBOX="$OPTARG"
                 ;;
-            m)
+            i)
                 _MESSAGE_UID="$OPTARG"
                 _FLAG_GET_MESSAGE=true
                 ;;

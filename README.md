@@ -13,12 +13,12 @@ A script to use [getnada](https://getnada.com/) temp mail service from terminal.
 
 ```
 Usage:
-  ./getnada [-i <inbox>|-m <uid>|-d <uid>|-s]
+  ./getnada [-u <inbox>|-i <uid>|-d <uid>|-s]
 
 Options:
   no option        Optional, randamly get an inbox
-  -i <inbox>       Optional, get an inbox by its mail address
-  -m <uid>         Optional, show mail by its uid
+  -u <inbox>       Optional, get an inbox by its mail address
+  -i <uid>         Optional, show mail by its uid
   -d <uid>         Optional, delete mail by its uid
   -s               Optional, show available domains
   -h | --help      Display this help message
@@ -28,10 +28,10 @@ Examples:
     ~$ ./getnada
 
   - Get mails in test@getnada.com:
-    ~$ ./getnada -i 'test@getnada.com'
+    ~$ ./getnada -u 'test@getnada.com'
 
   - Show mail uUa4V5Hjmkqf9O detail in w3m:
-    ~$ ./getnada -m uUa4V5Hjmkqf9O
+    ~$ ./getnada -i uUa4V5Hjmkqf9O
 
   - Delete mail uUa4V5Hjmkqf9O:
     ~$ ./getnada -d uUa4V5Hjmkqf9O
