@@ -6,14 +6,14 @@ A script to use [getnada](https://getnada.com/) temp mail service from terminal.
 
 - [cURL](https://curl.haxx.se/download.html)
 - [jq](https://stedolan.github.io/jq/)
-- [w3m](http://w3m.sourceforge.net/)
-- [faker-cli](https://github.com/lestoni/faker-cli)
+- [w3m](http://w3m.sourceforge.net/) (optional)
+- [faker-cli](https://github.com/lestoni/faker-cli) (optional)
 
 ### How to use
 
 ```
 Usage:
-  ./getnada [-u <inbox>|-i <uid>|-d <uid>|-s]
+  ./getnada [-u <inbox>|-i <uid>|-d <uid>|-s|-t]
 
 Options:
   no option        Optional, randamly get an inbox
@@ -21,6 +21,7 @@ Options:
   -i <uid>         Optional, show mail by its uid
   -d <uid>         Optional, delete mail by its uid
   -s               Optional, show available domains
+  -t               Optional, show plain text without using w3m
   -h | --help      Display this help message
 
 Examples:

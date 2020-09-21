@@ -3,7 +3,7 @@
 # A script to use getnada temp mail service in terminal
 #
 #/ Usage:
-#/   ./getnada [-u <inbox>|-i <uid>|-d <uid>|-s]
+#/   ./getnada [-u <inbox>|-i <uid>|-d <uid>|-s|-t]
 #/
 #/ Options:
 #/   no option        Optional, randamly get an inbox
@@ -11,6 +11,7 @@
 #/   -i <uid>         Optional, show mail by its uid
 #/   -d <uid>         Optional, delete mail by its uid
 #/   -s               Optional, show available domains
+#/   -t               Optional, show plain text without using w3m
 #/   -h | --help      Display this help message
 #/
 #/ Examples:
@@ -49,14 +50,14 @@ set_command() {
     # Declare commands
     _CURL="$(command -v curl)" || command_not_found "curl" "https://curl.haxx.se/download.html"
     _JQ="$(command -v jq)" || command_not_found "jq" "https://stedolan.github.io/jq/"
-    _W3M="$(command -v w3m)" || command_not_found "w3m" "http://w3m.sourceforge.net/"
-    _FAKER="$(command -v faker-cli)" || command_not_found "faker-cli" "https://github.com/lestoni/faker-cli"
+    _W3M="$(command -v w3m)" || true
+    _FAKER="$(command -v faker-cli)" || true
 }
 
 set_args() {
     # Declare arguments
     expr "$*" : ".*--help" > /dev/null && usage
-    while getopts ":hsu:i:d:" opt; do
+    while getopts ":hstu:i:d:" opt; do
         case $opt in
             u)
                 _INBOX="$OPTARG"
@@ -71,6 +72,9 @@ set_args() {
                 ;;
             s)
                 _FLAG_SHOW_DOMAIN=true
+                ;;
+            t)
+                _FLAG_SHOW_TEXT=true
                 ;;
             h)
                 usage
@@ -104,7 +108,13 @@ jq_format() {
 
 fake_username () {
     # Create a fake user
-    echo "$($_FAKER -n firstName).$($_FAKER -n lastName)" | sed -E 's/"//g' | tr '[:upper:]' '[:lower:]'
+    if [[ -z "$_FAKER" ]]; then
+        tr -dc 'a-z0-9' < /dev/urandom \
+            | head -c9
+    else
+        sed -E 's/"//g' <<< "$($_FAKER -n firstName).$($_FAKER -n lastName)" \
+            | tr '[:upper:]' '[:lower:]'
+    fi
 }
 
 get_inbox() {
@@ -116,7 +126,11 @@ get_inbox() {
 get_message() {
     # Get message by uid
     # $1: uid
-    $_W3M -T "text/html" <<< "$($_CURL -sSX GET "$_MESSAGE_URL/$1" | $_JQ -r '.html')"
+    if [[ -z $_W3M  || -n "${_FLAG_SHOW_TEXT:-}" ]]; then
+        $_CURL -sSX GET "$_MESSAGE_URL/$1" | $_JQ -r '.html'
+    else
+        $_W3M -T "text/html" <<< "$($_CURL -sSX GET "$_MESSAGE_URL/$1" | $_JQ -r '.html')"
+    fi
 }
 
 delete_message() {
