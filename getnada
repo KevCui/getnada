@@ -16,19 +16,19 @@
 #/
 #/ Examples:
 #/   \e[32m- Generate a random inbox:\e[0m
-#/     ~$ ./getnada
+#/     $ ./getnada
 #/
 #/   \e[32m- Get mails in test@getnada.com:\e[0m
-#/     ~$ ./getnada \e[33m-u 'test@getnada.com'\e[0m
+#/     $ ./getnada \e[33m-u 'test@getnada.com'\e[0m
 #/
 #/   \e[32m- Show mail uUa4V5Hjmkqf9O detail: \e[0m
-#/     ~$ ./getnada \e[33m-i uUa4V5Hjmkqf9O\e[0m
+#/     $ ./getnada \e[33m-i uUa4V5Hjmkqf9O\e[0m
 #/
 #/   \e[32m- Delete mail uUa4V5Hjmkqf9O: \e[0m
-#/     ~$ ./getnada \e[33m-d uUa4V5Hjmkqf9O\e[0m
+#/     $ ./getnada \e[33m-d uUa4V5Hjmkqf9O\e[0m
 #/
 #/   \e[32m- Show all available domains: \e[0m
-#/     ~$ ./getnada \e[33m-s\e[0m
+#/     $ ./getnada \e[33m-s\e[0m
 
 set -e
 set -u

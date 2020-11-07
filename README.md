@@ -26,25 +26,25 @@ Options:
 
 Examples:
   - Generate a random inbox:
-    ~$ ./getnada
+    $ ./getnada
 
   - Get mails in test@getnada.com:
-    ~$ ./getnada -u 'test@getnada.com'
+    $ ./getnada -u 'test@getnada.com'
 
   - Show mail uUa4V5Hjmkqf9O detail in w3m:
-    ~$ ./getnada -i uUa4V5Hjmkqf9O
+    $ ./getnada -i uUa4V5Hjmkqf9O
 
   - Delete mail uUa4V5Hjmkqf9O:
-    ~$ ./getnada -d uUa4V5Hjmkqf9O
+    $ ./getnada -d uUa4V5Hjmkqf9O
 
   - Show all available domains:
-    ~$ ./getnada -s
+    $ ./getnada -s
 ```
 
 ## Run tests
 
 ```
-~$ bats test/getnada.bats
+$ bats test/getnada.bats
 ```
 
 ## Similar project
