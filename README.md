@@ -47,9 +47,19 @@ Examples:
 $ bats test/getnada.bats
 ```
 
-## Similar project
+## Similar projects
 
-Want more temp mail service? Check out [1secmail](https://github.com/KevCui/1secmail), you may like it!
+Want more temp mail service? Check out:
+
+- [1secmail](https://github.com/KevCui/1secmail)
+
+- [tempmail](https://github.com/KevCui/tempmail)
+
+Want to send anonymous emails? Check out:
+
+- [sendmail](https://github.com/KevCui/sendmail)
+
+You may like them!
 
 ---
 
