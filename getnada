@@ -42,7 +42,7 @@ set_var() {
     # Declare variables
     _HOST="https://getnada.com/api/v1"
     _INBOX_URL="$_HOST/inboxes"
-    _MESSAGE_URL="$_HOST/messages"
+    _MESSAGE_URL="$_HOST/messages/html"
     _DOMAIN_URL="$_HOST/domains"
 }
 
@@ -127,9 +127,9 @@ get_message() {
     # Get message by uid
     # $1: uid
     if [[ -z $_W3M  || -n "${_FLAG_SHOW_TEXT:-}" ]]; then
-        $_CURL -sSX GET "$_MESSAGE_URL/$1" | $_JQ -r '.html'
+        $_CURL -sSX GET "$_MESSAGE_URL/$1"
     else
-        $_W3M -T "text/html" <<< "$($_CURL -sSX GET "$_MESSAGE_URL/$1" | $_JQ -r '.html')"
+        $_W3M -T "text/html" <<< "$($_CURL -sSX GET "$_MESSAGE_URL/$1")"
     fi
 }
 
