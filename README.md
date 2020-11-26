@@ -1,15 +1,22 @@
 # getnada ![CI](https://github.com/KevCui/getnada/workflows/CI/badge.svg)
 
-A script to use [getnada](https://getnada.com/) temp mail service from terminal.
+> Use [getnada](https://getnada.com/) disposable temporary mail service from your terminal.
 
-### Dependency
+## Table of Contents
+
+- [Dependency](#dependency)
+- [How to use](#how-to-use)
+- [Run tests](#run-tests)
+- [Similar projects](#similar-projects)
+
+## Dependency
 
 - [cURL](https://curl.haxx.se/download.html)
 - [jq](https://stedolan.github.io/jq/)
 - [w3m](http://w3m.sourceforge.net/) (optional)
 - [faker-cli](https://github.com/lestoni/faker-cli) (optional)
 
-### How to use
+## How to use
 
 ```
 Usage:
